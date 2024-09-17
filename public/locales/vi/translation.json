@@ -1,0 +1,21 @@
+{
+    "login_message": {
+        "title": "Đăng nhập",
+        "label_username": "Tên người dùng",
+        "btn_message": "Đăng nhập"
+    },
+    "posts": {
+        "title_list": "Danh sách bài viết",
+        "title_add": "Thêm bài viết",
+        "title_edit": "Cập nhật bài viết"
+    },
+    "form": {
+        "title": "Tiêu đề",
+        "description": "Mô tả",
+        "tags": "Nhãn",
+        "btn": "Gửi"
+    },
+    "header": {
+        "logout": "Đăng xuất"
+    }
+}

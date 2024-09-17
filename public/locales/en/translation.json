@@ -1,0 +1,22 @@
+{
+    "login_message": {
+        "title": "Login",
+        "label_username": "Username",
+        "btn_message": "Login"
+    },
+    "posts": {
+        "title_list": "List Posts ",
+        "title_add": "Add Posts",
+        "title_edit": "Update Posts"
+
+    },
+    "form": {
+        "title": "Title",
+        "description": "Description",
+        "tags": "Tags",
+        "btn": "Submit"
+    },
+    "header": {
+        "logout": "Logout"
+    }
+}
