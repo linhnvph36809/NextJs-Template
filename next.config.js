@@ -1,8 +1,5 @@
-const { i18n } = require('./next-i18next.config');
-
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.ANALYZE === 'true',
-});
+import { i18n } from './next-i18next.config';
+import withBundleAnalyzer from '@next/bundle-analyzer';
 
 const isProd = process.env.NODE_ENV === 'production';
 
@@ -22,14 +19,10 @@ const securityHeaders = [
   { key: 'Access-Control-Allow-Headers', value: 'X-Requested-With, content-type, Authorization' },
 ];
 
-/** @type {import('next').NextConfig} */
 const nextConfig = {
-  // i18n
   i18n,
   swcMinify: true,
   output: 'standalone',
-
-  // config env
   publicRuntimeConfig: {
     NODE_ENV: process.env.NODE_ENV,
     APP_API_URL: process.env.NEXT_PUBLIC_APP_API_URL,
@@ -74,11 +67,11 @@ const nextConfig = {
     ];
   },
   poweredByHeader: false,
-};
-
-module.exports = isProd ? nextConfig : withBundleAnalyzer(nextConfig);
-module.exports = {
-  // Prefer loading of ES Modules over CommonJS
   experimental: { esmExternals: true },
 };
 
+const withBundleAnalyzerConfig = withBundleAnalyzer({
+  enabled: process.env.ANALYZE === 'true',
+})(nextConfig);
+
+export default isProd ? nextConfig : withBundleAnalyzerConfig;
