@@ -1,8 +1,7 @@
 {
-  "name": "c-tai-liệu-test-template",
+  "name": "c-tai-lieu-test-template",
   "version": "0.1.1",
   "private": true,
-  "type": "module",
   "scripts": {
     "dev": "env-cmd -f .env.clientDev next dev",
     "build": "next build",
