@@ -1,18 +1,16 @@
-import axios from 'axios';
 import TokenManager from 'brainless-token-manager';
-
-import { API_AUTH, VITE_APP_API } from './constant';
+import axios from 'axios';
 import { handlerDeleteCookie, handlerGetCookie, handlerSetCookie } from '../cookies';
-
+import { API_AUTH, VITE_APP_API } from './constant';
 
 const tokenManager = new TokenManager({
   getAccessToken: async () => {
     const token = handlerGetCookie('accessToken');
-    return token ? token : '';
+    return token || '';
   },
   getRefreshToken: async () => {
     const refreshToken = handlerGetCookie('refreshToken');
-    return refreshToken ? refreshToken : '';
+    return refreshToken || '';
   },
   onInvalidRefreshToken: () => {
     handlerDeleteCookie('accessToken');
