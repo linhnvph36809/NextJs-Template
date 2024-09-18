@@ -1,4 +1,4 @@
-import { useTranslation } from "next-i18next";
+import { useTranslation } from 'next-i18next';
 
 const AppLayout = ({ children }: any) => {
   const { i18n } = useTranslation();
@@ -9,11 +9,11 @@ const AppLayout = ({ children }: any) => {
 
   return (
     <>
-      <div className="flex gap-x-2">
-        <button className="text-sm" onClick={() => changeLanguage("en")}>
+      <div className='flex gap-x-2'>
+        <button className='text-sm' onClick={() => changeLanguage('en')}>
           English
         </button>
-        <button className="text-sm" onClick={() => changeLanguage("vi")}>
+        <button className='text-sm' onClick={() => changeLanguage('vi')}>
           Tiếng Việt
         </button>
       </div>

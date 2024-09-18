@@ -1,9 +1,10 @@
 import { useCallback, useEffect, useState } from 'react';
-import { axiosInstant } from '../api/request';
-import { PATH_LOGIN, PATH_POST } from 'src/constant';
-import { API_AUTH } from '@api/constant';
-import { useRequest } from 'ahooks';
 import { useRouter } from 'next/navigation';
+import { useRequest } from 'ahooks';
+
+import { axiosInstant } from '../api/request';
+import { PATH_LOGIN } from 'src/constant';
+import { API_AUTH } from '@api/constant';
 import { handlerDeleteCookie, handlerSetCookie } from '../cookies';
 
 const useAuth = () => {
@@ -17,7 +18,7 @@ const useAuth = () => {
       handlerSetCookie('refreshToken', data?.refreshToken);
       handlerSetCookie('username', username.username);
       setIsLogin(true);
-      router.push("/posts");
+      router.push('/posts');
     }
   }, []);
 

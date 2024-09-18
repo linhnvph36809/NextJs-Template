@@ -1,12 +1,9 @@
-import { useRequest } from "ahooks";
-import { tokenManagerInstance } from "../api/request";
+import { useRequest } from 'ahooks';
+
+import { tokenManagerInstance } from '../api/request';
 
 const usePosts = () => {
-  const fetchData = async (
-    api: string,
-    method: string,
-    params: any = undefined
-  ) => {
+  const fetchData = async (api: string, method: string, params: any = undefined) => {
     const { data } = await tokenManagerInstance(api, {
       method,
       data: params,
