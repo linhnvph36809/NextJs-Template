@@ -7,7 +7,7 @@ import usePosts from '@hooks/usePosts';
 
 import MainLayout from '@layout/MainLayout';
 
-import FormPost from '../../components/Form'
+import FormPost from '../components/Form'
 
 
 const UpdatePost = () => {
