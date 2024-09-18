@@ -1,10 +1,13 @@
-import { useTranslation } from 'react-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'react-i18next';
+
+import { API_POST } from '@api/constant';
 
 import usePosts from '@hooks/usePosts';
-import { API_POST } from '@api/constant';
-import FormPost from '../components/Form';
+
 import MainLayout from '@layout/MainLayout';
+
+import FormPost from '../components/Form';
 
 const AddPost = () => {
   const { loading, error, fetchPosts } = usePosts();

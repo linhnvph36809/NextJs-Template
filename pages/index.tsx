@@ -1,6 +1,6 @@
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'react-i18next';
 import { Button, Form, Input } from 'antd/lib';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import 'antd/dist/reset.css';
 import useAuth from '@hooks/useAuth';

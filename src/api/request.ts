@@ -1,7 +1,9 @@
-import TokenManager from 'brainless-token-manager';
 import axios from 'axios';
-import { handlerDeleteCookie, handlerGetCookie, handlerSetCookie } from '../cookies';
+import TokenManager from 'brainless-token-manager';
+
 import { API_AUTH, VITE_APP_API } from './constant';
+import { handlerDeleteCookie, handlerGetCookie, handlerSetCookie } from '../cookies';
+
 
 const tokenManager = new TokenManager({
   getAccessToken: async () => {

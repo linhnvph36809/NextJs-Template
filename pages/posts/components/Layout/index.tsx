@@ -1,9 +1,11 @@
-import { useEffect, useState } from 'react';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'react-i18next';
 import { getCookie } from 'cookies-next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useEffect, useState } from 'react';
 
 import useAuth from '@hooks/useAuth';
+
+
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [isClient, setIsClient] = useState<string>('');

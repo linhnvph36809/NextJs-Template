@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 
 import useAuth from '@hooks/useAuth';
 
+
 export default function MainLayout({ children }: { children: React.ReactNode }) {
   const [isClient, setIsClient] = useState<string>('');
   const { onLogout } = useAuth();
