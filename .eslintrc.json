@@ -2,13 +2,16 @@
   "extends": ["next/core-web-vitals", "@hunghg255/eslint-config-react"],
   "rules": {
     "no-console": "off",
-    "@typescript-eslint/no-explicit-any": "off",
-    "import/order": [
-      "error",
-      {
-        "groups": ["builtin", "external", "internal", "parent", "sibling", "index"],
-        "newlines-between": "always"
-      }
-    ]
-  }
+    "@typescript-eslint/no-explicit-any": "off"
+
+  },
+  "import/order": [
+    "error",
+    {
+      "groups": [
+        ["builtin", "external"]
+      ],
+      "newlines-between": "always"
+    }
+  ]
 }
