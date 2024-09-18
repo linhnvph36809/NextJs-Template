@@ -3,6 +3,7 @@ import FormPost from "../components/Form";
 import { useTranslation } from "react-i18next";
 import { API_POST } from "@api/constant";
 import MainLayout from "@layout/MainLayout";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 const AddPost = () => {
   const { loading, error, fetchPosts } = usePosts();
@@ -27,5 +28,14 @@ const AddPost = () => {
     </>
   );
 };
+
+export async function getStaticProps(context: { locale?: string }) {
+  const locale = context.locale || 'en';
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['translation'])),
+    },
+  };
+}
 
 export default AddPost;

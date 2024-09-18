@@ -1,7 +1,8 @@
-import { Button, Form, Input } from "antd";
+import { Button, Form, Input } from "antd/lib";
 import "antd/dist/reset.css";
 import useAuth from "@hooks/useAuth";
 import { useTranslation } from "react-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 const Login = () => {
   const { t } = useTranslation();
@@ -12,7 +13,7 @@ const Login = () => {
       <section className="w-[200px] h-[100vh] mx-auto flex justify-center items-center">
         <div>
           <h1 className="text-[50px] font-medium text-center mb-6">
-            {t("login_message.title")}
+            {t('login_message.title')}
           </h1>
           <Form
             layout="vertical"
@@ -41,9 +42,19 @@ const Login = () => {
           </Form>
         </div>
       </section>
+
     </>
   );
 };
+
+export async function getStaticProps(context: { locale?: string }) {
+  const locale = context.locale || 'en';
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['translation'])),
+    },
+  };
+}
 
 export default Login;
 

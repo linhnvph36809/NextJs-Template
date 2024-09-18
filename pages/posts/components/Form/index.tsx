@@ -1,7 +1,8 @@
-"use client";
-import { Button, Form, Input } from "antd";
-import Loading from "../loading/pages";
-import { useTranslation } from "react-i18next";
+import { Button, Form, Input } from 'antd/lib';
+import { useTranslation } from 'react-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import Loading from '../loading/pages';
+
 
 const FormPost = ({
   formName,
@@ -14,7 +15,6 @@ const FormPost = ({
   onFinish: (value: any) => void;
   initialValues?: any;
 }) => {
-
   const { t } = useTranslation();
 
   return (
@@ -29,13 +29,13 @@ const FormPost = ({
             layout="vertical"
             initialValues={initialValues}
           >
-            <Form.Item label={<label>{t("form.title")}</label>} name="Name ">
+            <Form.Item label={t("form.title")} name="name">
               <Input className="h-[40px]" />
             </Form.Item>
-            <Form.Item label={<label>{t("form.description")}</label>} name="Name ">
+            <Form.Item label={t("form.description")} name="description">
               <Input className="h-[40px]" />
             </Form.Item>
-            <Form.Item label={<label>{t("form.tags")}</label>} name="Name ">
+            <Form.Item label={t("form.tags")} name="tags">
               <Input className="h-[40px]" />
             </Form.Item>
             <Form.Item className="text-end">
@@ -44,7 +44,7 @@ const FormPost = ({
                 className="w-[150px] h-[40px] text-base"
                 htmlType="submit"
               >
-                 {t("form.btn")}
+                {t("form.btn")}
               </Button>
             </Form.Item>
           </Form>
@@ -53,5 +53,14 @@ const FormPost = ({
     </>
   );
 };
+
+export async function getStaticProps(context: { locale?: string }) {
+  const locale = context.locale || 'en';
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['translation'])),
+    },
+  };
+}
 
 export default FormPost;

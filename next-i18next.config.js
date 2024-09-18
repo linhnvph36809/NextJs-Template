@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   i18n: {
-    defaultLocale: 'vi',
+    defaultLocale: 'en',
     locales: ['vi', 'en'],
     localeDetection: false,
     defaultNS: 'translation', 

@@ -1,4 +1,6 @@
-import { Spin } from "antd";
+import dynamic from 'next/dynamic';
+
+const Spin = dynamic(() => import('antd/es/spin'), { ssr: false });
 
 const Loading = ({ loading }: { loading: any }) => {
   return (

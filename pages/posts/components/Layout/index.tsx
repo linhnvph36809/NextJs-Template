@@ -1,5 +1,6 @@
-import useAuth from "@/hooks/useAuth";
+import useAuth from "@hooks/useAuth";
 import { getCookie } from "cookies-next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -50,4 +51,13 @@ export default function Layout({
       </section>
     </div>
   );
+}
+
+export async function getStaticProps(context: { locale?: string }) {
+  const locale = context.locale || 'en';
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['translation'])),
+    },
+  };
 }

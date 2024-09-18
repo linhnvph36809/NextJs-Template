@@ -17,7 +17,7 @@ const useAuth = () => {
       handlerSetCookie('refreshToken', data?.refreshToken);
       handlerSetCookie('username', username.username);
       setIsLogin(true);
-      router.push(PATH_POST.POST);
+      router.push("/posts");
     }
   }, []);
 
